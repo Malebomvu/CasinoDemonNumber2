@@ -7,6 +7,7 @@ public class FPController : MonoBehaviour
 {
     [SerializeField] Transform View = null;
     [SerializeField] float smoothness = 4f;
+    [SerializeField] float walkingSpeed = 1f;
     float cameraRotation = 0f;
     CharacterController controls = null;
 
@@ -20,6 +21,7 @@ public class FPController : MonoBehaviour
     void Update()
     {
         UpdatecameraRotation();
+        Updatemovements();
     }
     void UpdatecameraRotation() { //camera
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -27,9 +29,9 @@ public class FPController : MonoBehaviour
         cameraRotation = Mathf.Clamp(cameraRotation, -90f, 90f);
         transform.Rotate(Vector3.up * mouseDelta.x);
     }
-    void movements() { //movement
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector3 velocity = (transform.forward * input.y + transform.right * input.x);
+    void Updatemovements() { //movement
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector3 velocity = (transform.forward * input.y + transform.right * input.x)*walkingSpeed;
         controls.Move(Time.deltaTime * velocity);
     }
 }
