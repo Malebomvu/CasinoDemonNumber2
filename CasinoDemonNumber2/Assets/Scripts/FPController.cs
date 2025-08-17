@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class FPController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class FPController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controls = GetComponent<CharacterController>();    
+        controls = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class FPController : MonoBehaviour
         cameraRotation -= mouseDelta.y * smoothness;
         cameraRotation = Mathf.Clamp(cameraRotation, -90f, 90f);
         transform.Rotate(Vector3.up * mouseDelta.x);
+        
     }
     void Updatemovements() { //movement
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
