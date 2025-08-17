@@ -1,0 +1,4 @@
+repository "CasinoDemonNumber2/CasinoDemonNumber2@20067455701342@cloud"
+  path "/"
+    br "/main"
+    co "/main"
