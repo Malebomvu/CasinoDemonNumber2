@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +18,11 @@ public class Gun : MonoBehaviour
             if (rb != null) 
             { rb.AddForce (gunPoint.forward * 100f); }
         }
+        
+        
     }
+    private void CollisionEnter(Collision collision) { if (collision.gameObject.CompareTag("Enemy"))
+        { print("EnemyHit" + collision.gameObject.name + "!"); } }
     
     
 
