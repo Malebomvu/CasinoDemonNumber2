@@ -20,7 +20,7 @@ public class guns : MonoBehaviour
     void Update()
     {
        if (Input.GetKeyDown(KeyCode.Mouse1)) { GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.right * 1000);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.right * 10f);
         } 
     }
 }
