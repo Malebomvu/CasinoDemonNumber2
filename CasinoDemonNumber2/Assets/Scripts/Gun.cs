@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
         { GameObject bullets = Instantiate(bullet, gunPoint.position, gunPoint.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null) 
-            { rb.AddForce (gunPoint.forward * 100f); }
+            { rb.AddForce (gunPoint.forward * 5f); }
         }
         
         
