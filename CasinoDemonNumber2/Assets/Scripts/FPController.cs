@@ -11,6 +11,7 @@ public class FPController : MonoBehaviour
     [SerializeField] float walkingSpeed = 1f;
     float cameraRotation = 0f;
     CharacterController controls = null;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
